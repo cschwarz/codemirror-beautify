@@ -1,0 +1,11 @@
+{
+  "extends": ".jshintrc-base",
+  "browser": true,
+  "globals": {
+    "_": false,
+    "CodeMirror": false,
+    "js_beautify": false,
+    "css_beautify": false,
+    "html_beautify": false
+  }
+}
