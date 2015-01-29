@@ -1,0 +1,21 @@
+{
+  "name": "codemirror-beautify-site",  
+  "version": "0.0.1",
+  "authors": [
+    "Christian Schwarz <christian.schwarz@refactory.at>"
+  ],
+  "private": true,
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "codemirror": "~4.10.0",
+    "js-beautify": "~1.5.4",
+    "lodash": "~2.4.1"
+  }
+}

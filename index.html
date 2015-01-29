@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link href="bower_components/codemirror/lib/codemirror.css" rel="stylesheet" />
+  <style>
+    .CodeMirror {
+      border: 1px solid #eee;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript</h2>
+  <textarea id="cm-js">CodeMirror.fromTextArea(document.getElementById('cm-js'), { beautify: true, mode: { name: 'javascript' } });</textarea>
+  <h2>JSON - { initialBeautify: false, autoBeautify: false }</h2>
+  <textarea id="cm-json">{ "key1": "value1", "key2": "value2", "key3": { "subKey1": "subValue1" } }</textarea>
+  <br>
+  <input type="button" value="Beautify" onclick="cmJson.beautify()">
+  <h2>CSS</h2>
+  <textarea id="cm-css">body {   margin: 0;   padding: 3em 6em;   font-family: tahoma, arial, sans-serif;   color: #000; }  #navigation a {   font-weight: bold;   text-decoration: none !important; }  h1 {   font-size: 2.5em; }  h2 {   font-size: 1.7em; }  h1:before, h2:before {   content: "::"; }</textarea>
+  <h2>HTML</h2>
+  <textarea id="cm-html"><!DOCTYPE html> <html lang="">  <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1.0">     <title></title>     <link rel="stylesheet" href=""> </head>  <body>     <script src=""></script> </body>  </html></textarea>
+
+  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+  <script src="bower_components/codemirror/lib/codemirror.js"></script>
+  <script src="bower_components/codemirror/mode/xml/xml.js"></script>
+  <script src="bower_components/codemirror/mode/javascript/javascript.js"></script>
+  <script src="bower_components/codemirror/mode/css/css.js"></script>
+  <script src="bower_components/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+  <script src="bower_components/js-beautify/js/lib/beautify.js"></script>
+  <script src="bower_components/js-beautify/js/lib/beautify-css.js"></script>
+  <script src="bower_components/js-beautify/js/lib/beautify-html.js"></script>
+  <script src="beautify.js"></script>
+  <script>
+    CodeMirror.fromTextArea(document.getElementById('cm-js'), { beautify: true, mode: { name: 'javascript' } });
+    var cmJson = CodeMirror.fromTextArea(document.getElementById('cm-json'), { beautify: { initialBeautify: false, autoBeautify: false }, mode: { name: 'javascript', json: true } });
+    CodeMirror.fromTextArea(document.getElementById('cm-css'), { beautify: true, mode: { name: 'css' } });
+    CodeMirror.fromTextArea(document.getElementById('cm-html'), { beautify: true, mode: { name: 'htmlmixed' } });
+  </script>
+</body>
+</html>
